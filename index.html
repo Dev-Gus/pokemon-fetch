@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Fetch App</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
-<body>
-    <section class="app">
-        <header class="app-header">
-            <h1>Pokemon Fetch App</h1>
-        </header>
-        <main class="app-main">
-            <div class="pokemon-list">
-                <div class="pokemon-card">
-                    <img src="https://via.placeholder.com/150" alt="Pokemon">
-                </div>
-            </div>
-        </main>
-        <footer class="app-footer">
-            <p>© 2025 Pokemon Fetch App - Developed by <a href="https://github.com/Dev-Gus">Dev-Gus</a></p>
-        </footer>
-    </section>
+
+<body class="app">
+    <header class="app-header">
+        <h1>Pokemon Fetch App</h1>
+    </header>
+    <main class="app-main">
+        <div class="pokemon-card">
+            <img id="pokemon-img" src="" alt="Pokemon">
+            <h2 id="pokemon-name"></h2>
+            <h3 id="pokemon-type"></h3>
+            <ul id="pokemon-stats">
+                <li id="pokemon-hp">HP: </li>
+                <li id="pokemon-attack">Attack: </li>
+                <li id="pokemon-defense">Defense: </li>
+                <li id="pokemon-sp">Special Attack: </li>
+                <li id="pokemon-sd">Special Defense: </li>
+                <li id="pokemon-speed">Speed: </li>
+            </ul>
+        </div>
+
+        <section class="pokemon-search">
+                <input id="search-input" type="text" placeholder="Search for a pokemon">
+            <button id="search-btn">Search</button>
+        </section>
+
+        <section class="status">
+            <p class="status-message">Loading...</p>
+            <p class="error-message">Error: Failed to load pokemon</p>
+        </section>
+    </main>
+    <footer class="app-footer">
+        <p>© 2025 Pokemon Fetch App - Developed by <a href="https://github.com/Dev-Gus">Dev-Gus</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
