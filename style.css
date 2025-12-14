@@ -1,0 +1,286 @@
+/* ========================================
+   FONTS & GLOBAL RESET
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&display=swap');
+/*'Press Start 2P' 'Orbitron'*/
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   BODY
+   ======================================== */
+
+body.app {
+    background: linear-gradient(120deg, #fffbe7 0%, #f7e898 60%, #ffe066 100%);
+    min-height: 100vh;
+    font-family: 'Orbitron', Arial, sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.app-header h1 {
+    font-size: 2.5rem;
+    color: #e3350d;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px #fafafa, 0 2px 10px #5553;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+.app-main {
+    animation: fadein 0.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+
+/* ========================================
+   POKEMON CARD
+   ======================================== */
+
+#pokemon-card {
+    width: 350px;
+    margin: 0.6rem auto;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f5f5dc 60%, #ffe066 100%);
+    border-radius: 24px;
+    box-shadow: 0 4px 28px #e3350d44, 0 1.5px 0 #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+#pokemon-card.hidden {
+    display: none;
+}
+
+#pokemon-card:hover {
+    box-shadow: 0 10px 32px #e3350d55, 0 3.5px 0 #e0d06b;
+    background: linear-gradient(135deg, #fffbe9 60%, #ffe066 100%);
+}
+
+#pokemon-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff3;
+    border: 2.5px solid #e3350d;
+    box-shadow: 0 2px 8px #e3350d22;
+    margin-bottom: 1rem;
+}
+
+#pokemon-name {
+    font-family: 'Orbitron', 'Arial', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 0.4rem;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 0 #ffe066, 0 2px 8px #faebd744;
+}
+
+#pokemon-type {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #e3350d 20%, #f67629 90%);
+    padding: 0.5em 0.75em;
+    border-radius: 1em;
+    box-shadow: 0 1.5px 6px #e3350d22;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-shadow: 0 1.5px 8px #ffa72680;
+}
+
+#pokemon-stats {
+    width: 100%;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#pokemon-stats li {
+    font-size: 1rem;
+    color: #231f20;
+    font-family: 'Orbitron', Arial, sans-serif;
+    background: #ffecb3;
+    border-radius: 7px;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.1rem;
+    letter-spacing: .5px;
+    box-shadow: 0 1.5px 0 #ffe06680;
+    text-shadow: 0 1px 0 #fff7;
+}
+
+#pokemon-stats li:hover {
+    background: linear-gradient(90deg, #ffe066 40%, #f7d027 100%);
+    cursor: pointer;
+}
+
+
+/* ========================================
+   POKEMON SEARCH SECTION
+   ======================================== */
+
+.pokemon-search {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-search input[type="text"] {
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    border: 2px solid #ffd93b;
+    background: #fffce6;
+    font-size: 1rem;
+    margin-right: 0.5em;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.pokemon-search input[type="text"]:focus {
+    border-color: #e3350d;
+    box-shadow: 0 0 8px #ffe06688;
+}
+
+.pokemon-search button {
+    background: linear-gradient(90deg, #e3350d 60%, #fa7c1a 100%);
+    color: #fff;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5em 1.35em;
+    cursor: pointer;
+    box-shadow: 0 2px 10px #e3350d22;
+    transition: background .2s;
+}
+
+.pokemon-search button:hover {
+    background: linear-gradient(90deg, #fa7c1a 40%, #e3350d 100%);
+}
+
+
+/* ========================================
+   STATUS SECTION
+   ======================================== */
+
+.status-message {
+    color: #e67622;
+    text-align: center;
+    margin-top: 1em;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 1.15rem;
+    background: #faebd7cc;
+    border-radius: 7px;
+    padding: 0.5em 1em;
+    display: block;
+    width: 100%;
+}
+
+.error-message {
+    color: #fff;
+    background: #e3350d;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    box-shadow: 0 1.5px 6px #e3350d44;
+    font-family: 'Orbitron', Arial, sans-serif;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.app-footer {
+    padding: 1rem 0 0.5rem 0;
+    background: #faebd7;
+    border-top: 2px solid #ffe066;
+    text-align: center;
+    color: #2c2c2c;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.app-footer a {
+    color: #e3350d;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.app-footer a:hover {
+    color: #fa7c1a;
+}
+
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.hidden {
+    display: none;
+}
+
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

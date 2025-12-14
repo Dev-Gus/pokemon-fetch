@@ -13,6 +13,11 @@
         <h1>Pokemon Fetch App</h1>
     </header>
     <main class="app-main">
+        <section class="pokemon-search">
+            <input id="search-input" type="text" placeholder="Search for a pokemon">
+            <button id="search-btn">Search</button>
+        </section>
+
         <div id="pokemon-card">
             <img id="pokemon-img" src="" alt="">
             <h2 id="pokemon-name"></h2>
@@ -26,11 +31,6 @@
                 <li id="pokemon-speed">Speed: </li>
             </ul>
         </div>
-
-        <section class="pokemon-search">
-                <input id="search-input" type="text" placeholder="Search for a pokemon">
-            <button id="search-btn">Search</button>
-        </section>
 
         <section class="status">
             <p class="status-message hidden">Loading...</p>
